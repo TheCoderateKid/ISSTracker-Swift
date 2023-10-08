@@ -1,6 +1,7 @@
 public struct IssTracker {
-    public private(set) var text = "Hello, World!"
 
-    public init() {
+    static func getISS(completion: @escaping (Result<ISS, Error>) -> ()) {
+        let http = HttpService()
+        http.findISS(completion: completion)
     }
 }
